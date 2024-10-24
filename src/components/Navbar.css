@@ -1,0 +1,150 @@
+/* Basic Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   width: 100% !important;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar-logo a {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .navbar-links ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+  }
+  
+  .navbar-links ul li {
+    position: relative;
+  }
+  
+  .navbar-links ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 10px 15px;
+  }
+  
+  /* Submenu */
+  .submenu {
+    position: relative;
+    top: 30px;
+    left: 0;
+    background-color: white;
+    padding: 10px;
+    display: none !important;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    width: 200px;
+  }
+  
+  .submenu li a {
+    color: #333;
+    padding: 8px 15px;
+    display: block;
+  }
+  
+  .submenu li a:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .submenu.open {
+    display: flex !important;
+  }
+  
+  /* Auth Buttons */
+  .auth-buttons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .login-btn,
+  .signup-btn {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .login-btn {
+    background-color: white;
+    color: #333;
+    border: 2px solid #333;
+  }
+  
+  .signup-btn {
+    background-color: #2b9348;
+    color: white;
+    border: 2px solid #2b9348;
+  }
+  
+  .signup-btn:hover {
+    background-color: #24943c;
+  }
+  
+  /* Hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+  }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+  }
+  
+  /* Mobile Responsive */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+  
+    .navbar-links ul {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background-color: white;
+      width: 100%;
+      flex-direction: column;
+      display: none;
+    }
+  
+    .navbar-links.open ul {
+      display: flex;
+    }
+  
+    .navbar-links ul li {
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+    }
+  
+    .auth-buttons {
+      display: none;
+    }
+  
+    .navbar-links ul li:hover .submenu {
+      display: none;
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .navbar-links ul li:hover .submenu {
+      display: flex;
+    }
+  }
+  
